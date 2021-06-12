@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-12 09:35:52
- * @LastEditTime: 2021-06-12 10:17:23
+ * @LastEditTime: 2021-06-12 14:07:37
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \learn\study_diff\h.js
@@ -38,7 +38,7 @@ export default function(sel, data, c) {
             }
         }
         return vnode(sel, data, children, undefined, undefined)
-    } else if (typeof c[i] === 'object' && 'sel' in c[i]) {
+    } else if (typeof c === 'object' && 'sel' in c) {
         let children = [c]
         return vnode(sel, data, children, undefined, undefined)
     } else {
