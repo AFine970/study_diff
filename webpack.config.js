@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-06-12 10:08:54
- * @LastEditTime: 2021-06-12 14:14:39
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-06-12 17:02:45
+ * @LastEditors: cunhang_wwei
  * @Description: In User Settings Edit
- * @FilePath: \learn\study_diff\webpack.dev.config.js
+ * @FilePath: \study_diff\webpack.config.js
  */
 const path = require('path');
 
@@ -14,6 +14,7 @@ module.exports = {
         publicPath: 'dist',
         filename: 'bundle.js'
     },
+    devtool: 'source-map',
     devServer: {
         contentBase: path.join(__dirname, 'page'),
         port: 9000,

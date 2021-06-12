@@ -1,10 +1,10 @@
 /*
- * @Author: your name
+ * @Author: cunhang_wwei
  * @Date: 2021-06-12 09:35:31
- * @LastEditTime: 2021-06-12 09:47:40
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-06-12 16:44:47
+ * @LastEditors: cunhang_wwei
  * @Description: In User Settings Edit
- * @FilePath: \learn\study_diff\vnode.js
+ * @FilePath: \study_diff\src\vnode.js
  */
 
 // 描述一个虚拟节点
@@ -23,8 +23,8 @@ export default function (sel, data, children, elm, text) {
         sel,
         data,
         children,
-        key,
         text,
-        elm
+        elm,
+        key
     }
 }

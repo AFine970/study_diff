@@ -1,10 +1,10 @@
 /*
- * @Author: your name
+ * @Author: cunhang_wwei
  * @Date: 2021-06-12 09:35:52
- * @LastEditTime: 2021-06-12 14:07:37
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-06-12 16:29:57
+ * @LastEditors: cuanhang_wwei
  * @Description: In User Settings Edit
- * @FilePath: \learn\study_diff\h.js
+ * @FilePath: \study_diff\src\h.js
  */
 import vnode from './vnode'
 
