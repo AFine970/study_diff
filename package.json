@@ -1,0 +1,16 @@
+{
+  "name": "study_diff",
+  "version": "1.0.0",
+  "description": "学习diff算法，并动手实践出来",
+  "main": "index.js",
+  "author": "cunhang_wwei",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "serve": "webpack serve"
+  }
+}
