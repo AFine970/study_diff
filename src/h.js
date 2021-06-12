@@ -1,8 +1,8 @@
 /*
  * @Author: cunhang_wwei
  * @Date: 2021-06-12 09:35:52
- * @LastEditTime: 2021-06-12 16:29:57
- * @LastEditors: cuanhang_wwei
+ * @LastEditTime: 2021-06-12 18:02:28
+ * @LastEditors: cunhang_wwei
  * @Description: In User Settings Edit
  * @FilePath: \study_diff\src\h.js
  */
@@ -26,7 +26,7 @@ export default function(sel, data, c) {
     } 
     
     if(typeof c === 'string' || typeof c === 'number') {
-        return vnode(sel, data, undefined, c, undefined)
+        return vnode(sel, data, undefined, undefined, c)
     } else if (Array.isArray(c)) {
         let children = []
         for (let i = 0;  i < c.length; i++) {

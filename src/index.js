@@ -1,7 +1,7 @@
 /*
  * @Author: cunhang_wwei
  * @Date: 2021-06-12 10:07:50
- * @LastEditTime: 2021-06-12 16:59:32
+ * @LastEditTime: 2021-06-12 18:04:28
  * @LastEditors: cunhang_wwei
  * @Description: In User Settings Edit
  * @FilePath: \study_diff\src\index.js
@@ -25,5 +25,7 @@ console.log('test2', test2)
 console.log('test3', test3)
 
 const container = document.getElementById('container')
-
-// patch(container, test)
+const btn = document.getElementById('btn')
+btn.onclick = function () {
+    patch(container, test)
+}

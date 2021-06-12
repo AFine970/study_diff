@@ -1,7 +1,7 @@
 /*
- * @Author: cunhang_wwei
+ * @Author: cunhang_wei
  * @Date: 2021-06-12 09:35:31
- * @LastEditTime: 2021-06-12 16:44:47
+ * @LastEditTime: 2021-06-12 18:01:49
  * @LastEditors: cunhang_wwei
  * @Description: In User Settings Edit
  * @FilePath: \study_diff\src\vnode.js
@@ -23,8 +23,8 @@ export default function (sel, data, children, elm, text) {
         sel,
         data,
         children,
-        text,
         elm,
+        text,
         key
     }
 }

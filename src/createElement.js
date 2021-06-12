@@ -1,7 +1,7 @@
 /*
  * @Author: cunhang_wwei
  * @Date: 2021-06-12 09:35:45
- * @LastEditTime: 2021-06-12 16:44:17
+ * @LastEditTime: 2021-06-12 17:56:20
  * @LastEditors: cunhang_wwei
  * @Description: 根据传进来的虚拟节点创建真实的DOM节点
  * @FilePath: \study_diff\src\createElement.js
@@ -19,8 +19,8 @@ export default function (vnode) {
     const realNode = document.createElement(sel)
 
     // 判断是否有文本，而且没有子节点？作为递归结束的出口
-    if (text !== '' && (children === undefined || !children.length)) {
-        document.innerText = text
+    if (text && (children === undefined || !children.length)) {
+        realNode.innerText = text
     } else if (Array.isArray(children) && children.length) {
         for (let i =0; i < children.length; i++) {
             let ch = children[i]
