@@ -1,10 +1,9 @@
 /*
  * @Author: cunhang_wwei
  * @Date: 2021-06-12 09:35:52
- * @LastEditTime: 2021-06-12 18:02:28
+ * @LastEditTime: 2021-06-14 15:49:06
  * @LastEditors: cunhang_wwei
- * @Description: In User Settings Edit
- * @FilePath: \study_diff\src\h.js
+ * @Description: 构造虚拟节点
  */
 import vnode from './vnode'
 

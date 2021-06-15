@@ -1,13 +1,12 @@
 /*
  * @Author: cunhang_wwei
  * @Date: 2021-06-12 09:35:45
- * @LastEditTime: 2021-06-12 17:56:20
+ * @LastEditTime: 2021-06-14 16:12:23
  * @LastEditors: cunhang_wwei
  * @Description: 根据传进来的虚拟节点创建真实的DOM节点
- * @FilePath: \study_diff\src\createElement.js
  */
 
-export default function (vnode) {
+export default function createElement (vnode) {
     const {
         sel,
         data,
@@ -25,7 +24,7 @@ export default function (vnode) {
         for (let i =0; i < children.length; i++) {
             let ch = children[i]
             // 创建DOM节点
-            let chDom = createElement(ch.sel)
+            let chDom = createElement(ch)
             realNode.appendChild(chDom)
         }
     }

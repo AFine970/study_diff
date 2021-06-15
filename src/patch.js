@@ -1,13 +1,13 @@
 /*
  * @Author: cunhang_wwei
  * @Date: 2021-06-12 09:36:00
- * @LastEditTime: 2021-06-12 18:01:13
+ * @LastEditTime: 2021-06-15 14:07:13
  * @LastEditors: cunhang_wwei
- * @Description: In User Settings Edit
- * @FilePath: \study_diff\src\patch.js
+ * @Description: 对比新旧节点进行打补丁操作
  */
 import vnode from './vnode'
 import createElement from './createElement'
+import patchVnode from './patchVnode'
 
 export default function (oldVnode, newVnode) {
     // ①判断第一次的节点是否是虚拟节点
@@ -17,11 +17,12 @@ export default function (oldVnode, newVnode) {
     }
 
     // ②判断是否是同一个虚拟节点
-    if (oldVnode.sel === newVnode.sel && oldVnode.key === newVnode.key) {
-        console.log('是同一个虚拟节点')
+    if (isSameNode(oldVnode, newVnode)) {
+        console.log('同一个虚拟节点')
+        patchVnode(oldVnode, newVnode)
     } else {
         // 直接进行暴力删除插入
-        let newVnodeElm = createElement(newVnode)
+        const newVnodeElm = createElement(newVnode)
         // 插入到老节点之前
         if (oldVnode.elm.parentNode && newVnodeElm) {
             oldVnode.elm.parentNode.insertBefore(newVnodeElm, oldVnode.elm)
@@ -30,4 +31,8 @@ export default function (oldVnode, newVnode) {
         //删掉老节点
         oldVnode.elm.remove()
     }
+}
+
+function isSameNode (oldVnode, newVnode) {
+    return oldVnode.sel === newVnode.sel && oldVnode.key === newVnode.key
 }
