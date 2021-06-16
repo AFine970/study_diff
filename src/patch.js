@@ -1,13 +1,14 @@
 /*
  * @Author: cunhang_wwei
  * @Date: 2021-06-12 09:36:00
- * @LastEditTime: 2021-06-15 14:07:13
+ * @LastEditTime: 2021-06-16 19:36:58
  * @LastEditors: cunhang_wwei
  * @Description: 对比新旧节点进行打补丁操作
  */
 import vnode from './vnode'
 import createElement from './createElement'
 import patchVnode from './patchVnode'
+import isSameVnode from './isSameVnode'
 
 export default function (oldVnode, newVnode) {
     // ①判断第一次的节点是否是虚拟节点
@@ -17,7 +18,7 @@ export default function (oldVnode, newVnode) {
     }
 
     // ②判断是否是同一个虚拟节点
-    if (isSameNode(oldVnode, newVnode)) {
+    if (isSameVnode(oldVnode, newVnode)) {
         console.log('同一个虚拟节点')
         patchVnode(oldVnode, newVnode)
     } else {
@@ -31,8 +32,4 @@ export default function (oldVnode, newVnode) {
         //删掉老节点
         oldVnode.elm.remove()
     }
-}
-
-function isSameNode (oldVnode, newVnode) {
-    return oldVnode.sel === newVnode.sel && oldVnode.key === newVnode.key
 }
