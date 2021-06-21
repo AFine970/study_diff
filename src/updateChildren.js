@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-06-15 14:19:35
  * @LastEditors: cunhang_wwei
- * @LastEditTime: 2021-06-18 18:48:40
+ * @LastEditTime: 2021-06-21 19:07:18
  * @Description: diff算法 四命中 更新子节点
  */
 import createElement from './createElement'
@@ -9,8 +9,6 @@ import isSameVnode from './isSameVnode'
 import patchVnode from './patchVnode'
 
 export default function (parentElm, oldCh, newCh) {
-    console.log('oldCh', oldCh)
-    console.log('newCh', newCh)
     // 旧前
     let oldStartIndex = 0
     // 旧后
@@ -33,7 +31,7 @@ export default function (parentElm, oldCh, newCh) {
     let oldKeyMap = {}
 
     while (newStartIndex <= newEndIndex && oldStartIndex <= oldEndIndex) {
-        console.log('❤')
+        console.log('循环中')
         // 首先跳过null和undefined的节点
         if (oldStartVnode === null || oldStartVnode === undefined) {
             oldStartVnode = oldCh[++oldStartIndex]
@@ -98,7 +96,7 @@ export default function (parentElm, oldCh, newCh) {
                 // 不是 undefined，则需要移动
                 let elmToMove = oldCh[indexInOld]
                 patchVnode(elmToMove, newStartVnode)
-
+                // 将这一项设置为undefined，表示已经处理完了
                 oldCh[indexInOld] = undefined
 
                 parentElm.insertBefore(elmToMove.elm, oldStartVnode.elm)
@@ -110,7 +108,7 @@ export default function (parentElm, oldCh, newCh) {
     }
 
     // 循环结束
-    if (oldStartIndex < oldEndIndex) {
+    if (oldStartIndex <= oldEndIndex) {
         console.log('旧前小于旧后，则说明 需要删除节点')
         // 旧前小于旧后，则说明 需要删除节点
         for (let i = oldStartIndex; i <= oldEndIndex; i++) {
@@ -118,7 +116,7 @@ export default function (parentElm, oldCh, newCh) {
                 parentElm.removeChild(oldCh[i].elm)
             }
         }
-    } else if (newStartIndex < newEndIndex) {
+    } else if (newStartIndex <= newEndIndex) {
         console.log('新前小于新后，则说明 需要新增节点')
         // 新前小于新后，则说明 需要新增节点
 
@@ -126,7 +124,7 @@ export default function (parentElm, oldCh, newCh) {
         for (let i = newStartIndex; i <= newEndIndex; i++) {
             // 将新的虚拟节点变为DOM，并加到最后
             const item = createElement(newCh[i])
-            parentElm.insertBefore(item, oldStartVnode.elm)
+            parentElm.insertBefore(item, oldStartVnode ? oldStartVnode.elm : null)
         }
     }
 }
