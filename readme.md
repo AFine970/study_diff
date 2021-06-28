@@ -1,4 +1,18 @@
-# 学习笔记
+# diff学习笔记
+
+## 快速开始
+
+- 安装依赖
+
+```bash
+npm install
+```
+
+- 启动
+
+```bash
+npm run serve
+```
 
 ## 虚拟 DOM
 
@@ -56,10 +70,10 @@
 ## 手写 diff 算法
 
 源码链接：
-> https://github.com/AFine970/study_diff
+> <https://github.com/AFine970/study_diff>
 
 ## 参考资料
 
-> https://www.bilibili.com/video/BV1v5411H7gZ?p=5&spm_id_from=pageDriver
+> <https://www.bilibili.com/video/BV1v5411H7gZ?p=5&spm_id_from=pageDriver>
 
 好好学习不会差，一起进步！
