@@ -1,4 +1,4 @@
-# diff学习笔记
+# diff算法 学习笔记
 
 ## 快速开始
 
@@ -67,10 +67,27 @@ npm run serve
 
 ![最优美的diff.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f49dd2b75b2a4a40b016e1551bac726d~tplv-k3u1fbpfcp-watermark.image)
 
-## 手写 diff 算法
+## 项目结构
 
-源码链接：
-> <https://github.com/AFine970/study_diff>
+```text
+|-- study_diff
+    |-- .gitignore
+    |-- package.json
+    |-- readme.md
+    |-- webpack.config.js
+    |-- yarn.lock
+    |-- page
+    |   |-- index.html
+    |-- src
+        |-- createElement.js // 根据传进来的虚拟节点创建真实的DOM节点
+        |-- h.js // 构造虚拟节点
+        |-- index.js // 主入口
+        |-- isSameVnode.js // 判断是否是相同的虚拟节点
+        |-- patch.js // 对比两个虚拟节点进行打补丁操作
+        |-- patchVnode.js // 新旧虚拟节点进行对比
+        |-- updateChildren.js // 比对更新虚拟节点里的children
+        |-- vnode.js // 虚拟节点类
+```
 
 ## 参考资料
 
